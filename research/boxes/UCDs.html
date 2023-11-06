@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Ultracool Subdwarfs</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header" class="alt">
+					<a href="#" onclick="history.go(-1)" class="logo">&#8592; Back</strong></a>
+				  </header>
+					</header>
+					
+					<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+					</script>
+				
+				<!-- Main -->
+					<div id="main" class="alt">
+						<section id="banner" class="style8">
+							<div class="inner">
+								<span class="image">
+									<img src="../images/background.png" alt="" />
+								</span>
+								<header class="major">
+									<h1>Evolulation and Atmospheric Models of Ultracool Subwarfs</h1>
+								</header>
+								<div class="content">
+									<p>Efrain Alvarado, Dr. Roman Gerasimov, and Prof. Adam J. Burgasser </p>
+								</div>
+							</div>
+						</section>
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Ultracool Subdwarfs</h1>
+									</header>
+									
+									<p> One of the perks of being a <a href="https://ucleads.ucop.edu/">UC LEADS</a> scholar is that the second summer of the program, you get to chose any of other nine UCs to do research at.
+										I thought going to San Diego would be a nice change from living in the Bay Area for most of my life. 
+										San Diego has been one of the best places that I been to.
+										Beautiful weather, great food, and nice beaches. Can't beat that!
+										<div class="image-container" style="text-align: center; clear: both;">
+											<img src="../images/SRC.png"  style="width: 35%; height: auto;" alt="">
+										<p>
+											To the left is me, in the middle is my P.I. (Prof. Adam Burgasser), and to the right is Hunter C. Brooks -who I worked with on similar projects.
+											This us after presenting at the 2023 <a href="https://ugresearch.ucsd.edu/conferences/src/index.html">SRC Conference</a>.
+										</p>
+										</div>
+									</p>
+									
+									<p> I decieded to work at the <a href="https://www.coolstarlab.org/">Cool Star Lab</a> under Prof. Adam J. Burgasser.
+										I was asigned to a project where I generatec evolutionary and atmospheric models of Ultracool Subdwarfs (UCDs).
+										Essentially, UCDs are metal-pool low-mass stars and brown dwards with surface temperatures (<span class="mathjax">\(T_{eff}\)</span>) below 3000 K.
+										The mass of these objects do no exceed 10% of the mass of the sun.
+										Since these objects have these unique properties, the metalicitiy, chemical composition, does not change throughout their lifetime, and just cool over time.
+										It is because of this, it allows us to provide a unique insight to study the evolution of the Milky Way.
+									</p>
+									<p> 
+										So far, we have a fairly great understanding of generating stars that have similar chemical composition to that of the sun.
+										In reality, stars will range with different chemical compositions.
+										This is one of the motivations for this project.
+										We want to generate atmospheric models of the UCDs.
+										There are current models that exist, however these models do not fit well with observational data.
+										This is partly to blame for the fact there are only on the order of hundreds know UCDs. 
+										Basically, by providing these models, we will have a better understanding of they would look like.
+									</p>
+									<p>
+										Before I continue on how we go about gerating these models. The fewest numbers you need to describe a star is its age, mass, and chemical composition.
+										As mentioned earlier, UCDs' chemical composition does not change over its lifetime -techincally it does but its negilible- so throughout this processes we will keep that value fixed.
+										With these numbers, we plug them into <a href="https://docs.mesastar.org/en/release-r23.05.1/"> Modules for Experiments in Stellar Astrophysics (MESA)</a> which gives us <span class="mathjax">\(T_{eff}\)</span> and surface gravity (<span class="mathjax">\(log(g)\)</span>)-techincally chemical composition as well, but as mentioned earlier, we keep this fixed.
+										From the results of MESA, we use <span class="mathjax">\(T_{eff}\)</span> , <span class="mathjax">\(log(g)\)</span>, and chemical composition to generate atmospheric models using <a href="https://www.physik.uni-hamburg.de/en/hs/group---hauschildt.html#:~:text=PHOENIX%20Code,-What%20is%20PHOENIX&text=PHOENIX%20is%20a%20general%2Dpurpose,all%20across%20the%20HR%2Ddiagram." >PHOENIX</a> code
+										This allows us to generate spectrum which astronomers can use. 
+									<div class="image-container" style="text-align: center; clear: both;">
+										<img src="../images/process.png"  style="width: 60%; height: auto;" alt="">
+									   <p>
+									   This is the general idea how we obtain spectrum of these objects. 
+									   </p>
+							   		</div>
+									</p>
+									<p>
+										We started with generating atmospheric models since this is the most computationally heavy part of this project.
+										All the atmospheric models were calculated using <a href="https://www.psc.edu/resources/bridges-2/">Bridges-2</a> in Pittsburgh, Pennsylvania.
+										Then all the evolutionary models were computed on local devices.
+									
+									</p>
+									<p>
+										Now, with the launch of the James Webb Space Telescope, Euclid operational, the Nancy Grace Roman Space Telescope, 
+										and the Vera Rubin Observatory bother underway, the job is to go out and find UCDs.
+										These observatories will be senstive enough to find these objects.
+										By finding more UCDs, we might be able to study the evolution of the Milky Way. 
+									</p>
+									<p>
+										I want to give a special thank you to <a href="https://romanger.com/">Dr. Roman Gerasimov</a>  for the mentorship of this project!
+										Also, on a side note, I will share the slides to my talk and the research note (in prep) at a later time.
+									</p>
+							
+							</section>
+							
+
+					</div>
+			
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/efrainalvaradoiii/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://orcid.org/0009-0005-8159-8490" class="icon brands alt fa-orcid"><span class="label">Orcid</span></a></li>
+								<li><a href="https://github.com/efrain-alvarado-iii" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="mailto:efrain.alvarado.iii@berkeley.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Efrain Alvarado III</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
