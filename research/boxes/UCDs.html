@@ -65,122 +65,125 @@
 										</p>
 										</div>
 									</p>
-									<!--Check over these paragraphs for any mistakes.-->
-									<p> At UC San Diego, I worked in the <a href="https://www.coolstarlab.org/">Cool Star Lab</a>, led by Prof. Adam J. Burgasser and mentored by Dr. Roman Gerasimov.
-										The goal of my project was to generate evolutionary and atmospheric models for Ultracool Subdwarfs (UCDs).
-										These objects have masses that do no exceed 10% of the sun's mass (<span class="mathjax">\(\mathrm{M} \leq 0.1 \mathrm{M_{\odot}}\)</span>),
-										and reach effective temperatures of less than <span class="mathjax">\(3000~\mathrm{K}\)</span>  (<span class="mathjax">\(T_{\mathrm{eff}} \leq 3000~\mathrm{K}\)</span>).
-										The brown dwarfs among UCDs, the lowest in mass, have numerious of unique properities.
-										One of which is they have long lifespans which can exceed the current age of the universe.  
-										In other words, every UCD that has formed still exists today.
-										Another is the fact that they cool over time since they cannot sustain nuclear fusion.
-										This means that they can retain their chemical composition.
-										Furthermore, their spectra are senstive to chemical abundances.
-										There are diverse range of metalicity of these objects, including metal-poor.
-										Putting these facts together, these objects are prime targets to study the history of the Milky Way, seeing how the metal content has change throughout its lifetime.
-										So, this is the motivation for the work: providing new atmospheric models that are able to capture the metal-poor contents and various effective temperature.
-										And being able to provide evolutionary models of these objects and seeing how they could change over time.
-									</p>
-
 									<p>
-										So, how we go about generating these models is that the fewest numbers you need to describe a star is its age, mass, and chemical composition.
-										As mentioned earlier, UCDs' chemical composition does not change over its lifetime -techincally it does but it's negilible- 
-										so throughout this processes we will keep that value fixed.
-										From a bird's eye view, we ideally start with these numbers and plug them into <a href="https://docs.mesastar.org/en/release-r23.05.1/"> Modules for Experiments in Stellar Astrophysics (<span class="mathjax">\( \texttt{MESA} \)</span>)</a>,
-										which gives us <span class="mathjax">\(T_\mathrm{{eff}}\)</span> and surface gravity (<span class="mathjax">\( \mathrm{log}(g)\)</span>)-techincally chemical composition as well, but as mentioned earlier, we keep this fixed.
-										From the results of MESA, we can generate atmospheric models using the propietary
-										<a href="https://www.physik.uni-hamburg.de/en/hs/group---hauschildt.html#:~:text=PHOENIX%20Code,-What%20is%20PHOENIX&text=PHOENIX%20is%20a%20general%2Dpurpose,all%20across%20the%20HR%2Ddiagram." ><span class="mathjax">\( \texttt{PHOENIX} \)</span></a> code
-									<div class="image-container" style="text-align: center; clear: both;">
-										<img src="../images/process.png"  style="width: 60%; height: auto;" alt="">
-									   <p>
-									   This is the general idea how we obtain evolutionary models and synthetic spectrum of these objects.
-									   </p>
-							   		</div>
-										But, we start at generating the atmospheric models since this the most computationally heavy part of this project.
+										At UC San Diego, I worked in the <a href="https://www.coolstarlab.org/">Cool Star Lab</a>, led by Prof. Adam J. Burgasser and mentored by Dr. Roman Gerasimov.
+										The goal of my project was to generate evolutionary and atmospheric models for Ultracool Subdwarfs (UCDs).
+										These objects have masses that do not exceed 10% of the Sun’s mass (<span class="mathjax">\(\mathrm{M} \leq 0.1~\mathrm{M_{\odot}}\)</span>)
+										and reach effective temperatures below <span class="mathjax">\(3000~\mathrm{K}\)</span> (<span class="mathjax">\(T_{\mathrm{eff}} \leq 3000~\mathrm{K}\)</span>).
+										The brown dwarfs among UCDs, which occupy the lowest-mass regime, possess numerous unique properties.
+										One such property is their exceptionally long lifespans, which can exceed the current age of the universe.
+										In other words, every UCD that has ever formed still exists today.
+										Additionally, because they cannot sustain stable nuclear fusion, they cool continuously over time.
+										This allows them to retain their original chemical compositions.
+										Furthermore, their spectra are sensitive to chemical abundances.
+										Taken together, these characteristics make UCDs prime targets for studying the history of the Milky Way, particularly how its metal content has changed over cosmic time.
+										Motivated by this, my work focuses on providing new atmospheric models capable of capturing metal-poor compositions across a range of effective temperatures,
+										as well as evolutionary models that describe how these objects change over time.
 									</p>
-
+									<p>
+										So, the way we generate these models begins with the fact that the fewest parameters needed to describe a star are its age, mass, and chemical composition.
+										As mentioned earlier, the chemical composition of UCDs does not change significantly over their lifetimes—technically it does, but the effect is negligible—
+										so throughout this process we keep that value fixed.
+										From a bird’s-eye view, we start with these parameters and input them into
+										<a href="https://docs.mesastar.org/en/release-r23.05.1/">Modules for Experiments in Stellar Astrophysics (<span class="mathjax">\( \texttt{MESA} \)</span>)</a>,
+										which outputs the effective temperature (<span class="mathjax">\(T_\mathrm{eff}\)</span>) and surface gravity (<span class="mathjax">\( \mathrm{log}(g) \)</span>)—
+										and technically the chemical composition as well, though this is kept fixed as noted above.
+										Using the results from MESA, we then generate atmospheric models with the proprietary
+										<a href="https://www.physik.uni-hamburg.de/en/hs/group---hauschildt.html#:~:text=PHOENIX%20Code,-What%20is%20PHOENIX&text=PHOENIX%20is%20a%20general%2Dpurpose,all%20across%20the%20HR%2Ddiagram."><span class="mathjax">\( \texttt{PHOENIX} \)</span></a> code.
+										<div class="image-container" style="text-align: center; clear: both;">
+											<img src="../images/process.png" style="width: 60%; height: auto;" alt="">
+											<p>
+												This figure illustrates the general workflow used to obtain evolutionary models and synthetic spectra for these objects.
+											</p>
+										</div>
+										However, we begin by generating the atmospheric models first, as this is the most computationally intensive part of the project.
+									</p>
 									<p> 
 										We focus on a subset of metals when generating atmospheric models,
-										mamely, elements from the <a href="https://en.wikipedia.org/wiki/Alpha_process"> alpha-process</a>- <span class="mathjax">\( \mathrm{[O,~Ne,~Mg,~Si,~S,~Ar,~Ca,\&~Ti]}\)</span>.
-										The amount of these elements is refered to alpha-enrichment [<span class="mathjax">\( \mathrm{[\alpha/Fe]}\)</span>].
-										And the reason why focus on them as we use them as chemical tracers
-										since these elements are created through the lifetime of the creation and distruction of massive-stars- the first stars of the universe are more massive than the ones we see today.
-										This informs us the chemical history of the pervious stars before the brown dwarf that we see today.
-									<p>	
-										We used <span class="mathjax">\( \mathrm{[Fe/H]}\)</span>-<span class="mathjax">\( \mathrm{[\alpha/Fe]}\)</span> distribution of Milky Way stars from APOGEE spectra to generate chemical grid (see figure below).
-										We generated a grid of 24 different combinations of <span class="mathjax">\( \mathrm{[Fe/H]}\)</span> and <span class="mathjax">\( \mathrm{[\alpha/Fe]}\)</span>,
-										which samples from the Milky Way's thin disk, thick disk, and halo as well as metal-poor <span class="mathjax">\ \alpha </span>-enhanced abundances observed in globular clusters
-										<div class="image-container" style="text-align: center; clear: both;">
-										<img src="../images/Mackereth.jpg"  style="width: 75%; height: 75%;" alt="">
-										<p>
-											This is the chemical distribution of stars in the <span class="mathjax">\( \mathrm{[Fe/H]}\)</span>-<span class="mathjax">\( \mathrm{[\alpha/Fe]}\)</span> phase plane.
-											In this case, <span class="mathjax">\(\mathrm{Mg}\)</span> is an indicator of alpha-enchriment.
-											It also shows where you can typically find stars of specific chemical composition within the Milky Way.
-											Metal-poor, high alpha-enriched stars tend to be found in higher ellipical orbits -the halo and the disk. 
-											This plot was gathered from the <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.482.3426M/abstract">2019 Mackereth</a> paper.
-										</p>
-										</div>
+										namely elements produced through the <a href="https://en.wikipedia.org/wiki/Alpha_process">alpha process</a>:
+										<span class="mathjax">\( \mathrm{[O,~Ne,~Mg,~Si,~S,~Ar,~Ca,\&~Ti]}\)</span>.
+										The abundance of these elements relative to iron is referred to as alpha enrichment,
+										denoted by <span class="mathjax">\( \mathrm{[\alpha/Fe]}\)</span>.
+										We focus on these elements because they serve as powerful chemical tracers.
+										Alpha elements are primarily produced during the lifetimes and deaths of massive stars;
+										in the early universe, stars were generally more massive than those commonly observed today.
+										As a result, the alpha enrichment of a brown dwarf encodes information about the chemical history of the stellar populations that existed before it formed.
 									</p>
-
-									<p>
-										We computed a grid- called The Spectral ANalog of Dwarfs <span class="mathjax">\( \texttt{SAND} \)</span> grid- with the 24 chemistries of metalicity and alpha-enchriment with
-										<span class="mathjax">\(T_\mathrm{{eff}}\)</span> ranging from <span class="mathjax">\(4000~\mathrm{K}\)</span> to <span class="mathjax">\(700~\mathrm{K}\)</span> in steps of <span class="mathjax">\(100~\mathrm{K}\)</span>, 
-										<span class="mathjax">\( \mathrm{log}(g)\)</span> from 4.0 to 6.0 in steps of 0.5 dex,
-										and <span class="mathjax">\( \mathrm{[Fe/H]}\)</span> (solar scaled, variable step size).
-										All the atmospheric models were calculated using <a href="https://www.psc.edu/resources/bridges-2/">Bridges-2</a> in Pittsburgh, Pennsylvania.
-										With all said and done, here are the final results as shown in the figure below. You can find more about the <span class="mathjax">\( \texttt{SAND} \)</span> in the research note at the bottom of the website.
+									<p>	
+										We used the <span class="mathjax">\( \mathrm{[Fe/H]}\)</span>–<span class="mathjax">\( \mathrm{[\alpha/Fe]}\)</span> distribution of Milky Way stars derived from APOGEE spectra to generate a chemical grid (see figure below).
+										Specifically, we constructed a grid of 24 different combinations of <span class="mathjax">\( \mathrm{[Fe/H]}\)</span> and <span class="mathjax">\( \mathrm{[\alpha/Fe]}\)</span>,
+										sampling stellar populations from the Milky Way’s thin disk, thick disk, and halo,
+										as well as metal-poor, alpha-enhanced abundances commonly observed in globular clusters.
 										<div class="image-container" style="text-align: center; clear: both;">
-										<img src="../images/SAND.png"  style="width: 100%; height: 75%;" alt="">
+											<img src="../images/Mackereth.jpg" style="width: 75%; height: 75%;" alt="">
 											<p>
-												<i>Left</i>: <span class="mathjax">\( \texttt{SAND} \)</span> spectral sequence with, <span class="mathjax">\( \mathrm{log}(g) = 5.0 \)</span>, <span class="mathjax">\( \mathrm{[Fe/H]}=-1.5\)</span>, 
-												<span class="mathjax">\( \mathrm{[\alpha/Fe]} = 0 \)</span>, and <span class="mathjax">\( 800~\mathrm{K} \le T_\mathrm{{eff}} \le 2400~\mathrm{K} \)</span>. <br>
-												<i>Right</i>: <span class="mathjax">\( \texttt{SAND} \)</span> spectral sequence with <span class="mathjax">\(T_\mathrm{{eff}}=1900~\mathrm{K}\)</span>, <span class="mathjax">\( \mathrm{log}(g) = 5.0 \)</span>, and varying metallicity and alpha enrichment. <br> 
-												In both panels, key molecular absorption bands (<span class="mathjax">\(\mathrm{H_2O} \)</span>, <span class="mathjax">\(\mathrm{CH_4} \)</span>, <span class="mathjax">\(\mathrm{TiO}\)), 
-												atomic lines of <span class="mathjax">\( \mathrm{K} \)</span>, and the approximate wavelength range of collision-induced absorption by <span class="mathjax">\( \mathrm{H_2} \)</span> are highlighted. The spectra were downsampled to R~1000 for clarity.
+												This figure shows the chemical distribution of stars in the <span class="mathjax">\( \mathrm{[Fe/H]}\)</span>–<span class="mathjax">\( \mathrm{[\alpha/Fe]}\)</span> phase plane.
+												In this case, <span class="mathjax">\(\mathrm{Mg}\)</span> is used as an indicator of alpha enrichment.
+												The figure also illustrates where stars of specific chemical compositions are typically found within the Milky Way.
+												Metal-poor, highly alpha-enriched stars tend to occupy more elliptical orbits, characteristic of the halo and thick disk.
+												This plot is taken from <a href="https://ui.adsabs.harvard.edu/abs/2019MNRAS.482.3426M/abstract">Mackereth et al. (2019)</a>.
 											</p>
 										</div>
 									</p>
 									<p>
-										Using the <span class="mathjax">\( \texttt{SAND} \)</span> grid, which contains tempereture profiles, 
-										we can use them as boundary conditions for stellar strucutre equations using <span class="mathjax">\( \texttt{MESA} \)</span>.
-										From the 24 chemistries, we generated isochrone tracks, which we refer to as <span class="mathjax">\( \texttt{SANDee} \)</span> (<b>e</b>volutionary <b>e</b>xtention to <span class="mathjax">\( \texttt{SAND} \)</span>).
-										
-									</p>
-									<p>
-										Now, with the launch of the James Webb Space Telescope, Euclid operational, and the Nancy Grace Roman Space Telescope 
-										and the Vera Rubin Observatory both underway, the job is now to go out and find more UCDs.
-										These observatories will be senstive enough to find these objects (i.e. example, example, example,).
-										By finding more UCDs, we might be able to study the evolution of the Milky Way. 
-									</p>
-									<p>
-									</p>
-									<p>
-										I want to give a special thank you to <a href="https://romanger.com/">Dr. Roman Gerasimov</a> for the mentorship of this project!
-										Here are a couple of things that resulted from this work. First, I was able to publish a <a href="https://iopscience.iop.org/article/10.3847/2515-5172/ad4bd7">first-author manuscript</a>. 
-										I was a co-authored on two publications- one on using <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240501634G/abstract"> <span class="mathjax">\( \texttt{SANDee} \)</span></a> to discover
-										three brown dwarfs located in NGC 6397. Using the <span class="mathjax">\( \texttt{SAND} \)</span></a> grid, we able to accurately model the atmosphere of a  <a href="https://iopscience.iop.org/article/10.3847/2041-8213/ad6607">hypervelocity L subdwarf</a>, additionally providing a hint to its origins.
-										Lastly, I gave talk at the Summer Research Conference at UC San Diego.
-										You can find link to my slides <a href="https://docs.google.com/presentation/d/1lQjCLjFuF0xxc_l7OiD5JPNrLHvwtyvP9tuFJkuzsBk/edit?usp=sharing">here</a>.
-										Additionally, I was priveledged to attended the AAS 244 conferences were I gave a poster presentation about my work. 
-										You can find these <a href="https://aas244-aas.ipostersessions.com/default.aspx?s=5D-53-5D-50-D8-B7-5B-75-90-74-34-33-D4-B5-05-14&guestview=true">here</a>, or here on this website.
-									</p>
-									<p>
-										In case you didn't want to click those links, here they are!
-										<div class="row">
-											<div class="column">
-													<iframe src="https://docs.google.com/presentation/d/1lQjCLjFuF0xxc_l7OiD5JPNrLHvwtyvP9tuFJkuzsBk/edit?usp=sharing" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
-													</iframe>
-											</div>
-											<div class="column">
-												<iframe src="../../downloads/SAND.pdf" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
-												</iframe>
-											</div>
-											<div class="column"></div>
+										We computed a grid—called the Spectral ANalog of Dwarfs (<span class="mathjax">\( \texttt{SAND} \)</span>) grid—
+										consisting of 24 different chemical compositions spanning metallicity and alpha enrichment.
+										The grid covers effective temperatures <span class="mathjax">\(T_\mathrm{eff}\)</span> ranging from <span class="mathjax">\(4000~\mathrm{K}\)</span> down to <span class="mathjax">\(700~\mathrm{K}\)</span> in steps of <span class="mathjax">\(100~\mathrm{K}\)</span>,
+										surface gravities <span class="mathjax">\( \mathrm{log}(g) \)</span> from 4.0 to 6.0 in steps of 0.5 dex,
+										and <span class="mathjax">\( \mathrm{[Fe/H]} \)</span> values (solar-scaled, with variable step size).
+										All atmospheric models were computed using <a href="https://www.psc.edu/resources/bridges-2/">Bridges-2</a> in Pittsburgh, Pennsylvania.
+										With all calculations complete, the final results are shown in the figure below.
+										More details about the <span class="mathjax">\( \texttt{SAND} \)</span> grid can be found in the research note at the bottom of the website.
+										<div class="image-container" style="text-align: center; clear: both;">
+											<img src="../images/SAND.png" style="width: 100%; height: 75%;" alt="">
+											<p>
+												<i>Left</i>: <span class="mathjax">\( \texttt{SAND} \)</span> spectral sequence with <span class="mathjax">\( \mathrm{log}(g) = 5.0 \)</span>, <span class="mathjax">\( \mathrm{[Fe/H]} = -1.5 \)</span>,
+												<span class="mathjax">\( \mathrm{[\alpha/Fe]} = 0 \)</span>, and <span class="mathjax">\( 800~\mathrm{K} \le T_\mathrm{eff} \le 2400~\mathrm{K} \)</span>. <br>
+												<i>Right</i>: <span class="mathjax">\( \texttt{SAND} \)</span> spectral sequence with <span class="mathjax">\(T_\mathrm{eff} = 1900~\mathrm{K}\)</span>, <span class="mathjax">\( \mathrm{log}(g) = 5.0 \)</span>, and varying metallicity and alpha enrichment. <br>
+												In both panels, key molecular absorption bands (<span class="mathjax">\(\mathrm{H_2O}\)</span>, <span class="mathjax">\(\mathrm{CH_4}\)</span>, <span class="mathjax">\(\mathrm{TiO}\)</span>),
+												atomic lines of <span class="mathjax">\( \mathrm{K} \)</span>, and the approximate wavelength range of collision-induced absorption by <span class="mathjax">\( \mathrm{H_2} \)</span> are highlighted.
+												The spectra were downsampled to R~1000 for clarity.
+											</p>
 										</div>
 									</p>
 									<p>
-										A side note: my mentors presented a press conferences at AAS 244. 
-										They were nice enough to give a shoutout about my work.
+										Using the <span class="mathjax">\( \texttt{SAND} \)</span> grid, which provides temperature–pressure profiles,
+										we can use these models as boundary conditions for solving the stellar structure equations with <span class="mathjax">\( \texttt{MESA} \)</span>.
+										From the 24 chemical compositions, we generated a set of isochrone tracks, which we refer to as
+										<span class="mathjax">\( \texttt{SANDee} \)</span> (<b>e</b>volutionary <b>e</b>xtension to <span class="mathjax">\( \texttt{SAND} \)</span>).
+									</p>
+									<p>
+										Now, with the launch of the James Webb Space Telescope, Euclid operational, and both the Nancy Grace Roman Space Telescope
+										and the Vera C. Rubin Observatory underway, the next step is to identify and characterize more UCDs.
+										These observatories will be sensitive enough to detect such objects across a wide range of environments.
+										By discovering and analyzing larger samples of UCDs, we can place stronger constraints on their properties
+										and ultimately gain deeper insight into the formation and evolutionary history of the Milky Way.
+									</p>
+									<p>
+										<b>Scientific Products:</b>
+									</p>
+
+									<p>
+										I want to give a special thank you to <a href="https://romanger.com/">Dr. Roman Gerasimov</a> for the mentorship of this project!
+									</p>
+									<p>
+										First, I was able to publish a <a href="https://iopscience.iop.org/article/10.3847/2515-5172/ad4bd7">first-author manuscript</a>. 
+										<embed src="../../downloads/SAND.pdf" type="application/pdf" width="100%" height="500px">
+									</p>
+									<p>
+										I was a co-author on two publications—one using <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv240501634G/abstract"><span class="mathjax">\( \texttt{SANDee} \)</span></a> to discover
+										three brown dwarfs located in NGC 6397.
+										Using the <span class="mathjax">\( \texttt{SAND} \)</span> grid, we were able to accurately model the atmosphere of a
+										<a href="https://iopscience.iop.org/article/10.3847/2041-8213/ad6607">hypervelocity L subdwarf</a>, additionally providing insight into its likely origin.
+										Lastly, I gave a talk at the Summer Research Conference at UC San Diego.
+										<embed src="../../downloads/SRC.pdf" type="application/pdf" width="100%" height="500px">
+										Additionally, I was privileged to attend the AAS 244 conference, where I presented a poster on my work.
+										You can find the poster <a href="https://aas244-aas.ipostersessions.com/default.aspx?s=5D-53-5D-50-D8-B7-5B-75-90-74-34-33-D4-B5-05-14&guestview=true">here</a>, or here on this website.
+
+									</p>
+									<p>
+										A side note: my mentors gave a press talk at AAS 244. 
+										They were nice enough to give a shoutout!
 										You can find their talks <a href="https://www.youtube.com/live/q1kYIkf1mBQ?si=TWA42__J0ZHJAuDB&t=157">here</a> and <a href="https://www.youtube.com/live/-o_KOAKDDeg?si=DpMgHhUugFnEf9rN&t=1469">here</a>!
 									</p>
 									<p>

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Atmospheric Retrievals</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header" class="alt">
+					<a href="#" onclick="history.go(-1)" class="logo">&#8592; Back</strong></a>
+				  </header>
+					</header>
+					
+					<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+					</script>
+				
+				<!-- Main -->
+					<div id="main" class="alt">
+						<section id="banner" class="style8">
+							<div class="inner">
+								<span class="image">
+									<img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/09/ngc_602_nircam_and_miri_image/26325710-4-eng-GB/NGC_602_NIRCam_and_MIRI_image_article.jpg" alt="" />
+								</span>
+								<header class="major">
+									<h1>Atmospheric Retrievals of Ultracool Subwarfs</h1>
+								</header>
+								<div class="content">
+									<p>Under Prof. Eileen C. Gonzales</p>
+								</div>
+							</div>
+						</section>
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									
+									<p> 
+										This has been a really exciting project for me, as it is complementary to my undergraduate work at <a href="../boxes/UCDs.html">UC San Diego</a>.
+										I recommend reading about that project first before continuing with this section.
+										Most of this work will be included in my Master’s thesis.
+										At a later time, I will link my thesis along with my defense talk.
+										We also anticipate an additional publication resulting from this work.
+										As a note, this is an ongoing project involving proprietary data, so I am unable to show many results at this time.
+										However, I can explain the background and motivation behind the project.
+									</p>
+									<p>
+										To begin, it is helpful to introduce who I am working with.
+										I work with Dr. Gonzales at San Francisco State University, along with another graduate student in the Substellar InvestiGATOR Group<sup id="ref-1"><a href="#note-1">[1]</a></sup>, Ember Vosmek-Park.
+										Dr. Gonzales’s research primarily focuses on determining fundamental parameters and atmospheric properties of brown dwarfs,
+										with particular expertise in subdwarfs.
+										She does this using atmospheric retrieval techniques, implemented through a code called <em>Brewster</em><sup id="ref-2"><a href="#note-2">[2]</a></sup>.
+									</p>
+									<p>
+										Before explaining what an atmospheric retrieval is, it is useful to first discuss forward models.
+										During my time at UC San Diego, I helped create the <span class="mathjax">\( \texttt{SAND} \)</span> grid—these are examples of forward models.
+										In brief, forward modeling involves incorporating as much physics and chemistry as possible into a model,
+										while varying only a limited set of parameters
+										(e.g., <span class="mathjax">\( T_\mathrm{eff} \)</span>, <span class="mathjax">\( \mathrm{log}(g) \)</span>, <span class="mathjax">\( \mathrm{[Fe/H]} \)</span>, etc.).
+										This approach is strongly grounded in physical theory, but it also has important limitations.
+									</p>
+									<p>
+										Modeling the atmospheres of metal-poor brown dwarfs (subdwarfs) is particularly challenging,
+										as most empirical knowledge of brown dwarfs comes from nearby, solar-metallicity field dwarfs.
+										Because of this bias, forward models often struggle to reproduce certain features observed in subdwarf spectra.
+										An alternative approach is to introduce more free parameters while assuming less detailed physics
+										(e.g., different parameterizations of the thermal structure, turning clouds on or off, or varying cloud properties).
+										This approach is known as atmospheric retrieval.
+										While we must be cautious—since simplifying the physics can introduce degeneracies—retrievals are extremely valuable when compared against forward models.
+										Such comparisons allow us to identify where forward models break down and guide future improvements.
+									</p>
+									<p>
+										In this project, I am using data from the Arcana of the Ancients James Webb Space Telescope (JWST) program <a href="">GO #4668</a>.
+										JWST is critical for this work because it provides the infrared sensitivity required to obtain high signal-to-noise spectra
+										of these intrinsically faint and cold brown dwarfs.
+										Additionally, JWST enables much broader wavelength coverage.
+										Most existing data span approximately <span class="mathjax">\( \sim 0.6–2.5~\mu \mathrm{m} \)</span>;
+										with JWST, we extend this coverage to <span class="mathjax">\( \sim 0.6–14~\mu \mathrm{m} \)</span>.
+										Our sample consists of L and T dwarfs spanning known temperatures (spectral types) and metallicities (metallicity classes),
+										with emphasis on the brightest sources and those with Gaia and/or ground-based astrometry.
+										One of the primary goals of this program is to improve atmospheric modeling of low-temperature subdwarf spectra
+										and to better understand how metallicity influences condensation processes in cool atmospheres.
+									</p>
+									<p>
+										One of the key targets in this program is J14162408+1348263AB (J1416AB),
+										the only known subdwarf L+T binary system.
+										My project partner, Ember, focuses on J1416A (the L dwarf), while I focus on J1416B (the T dwarf).
+										In 2017, Mike Line performed the first atmospheric retrieval on this system.
+										In 2020, my advisor conducted another retrieval using the <em>Brewster</em> framework.
+										In 2022, Joseph Zalesky carried out an additional retrieval with modifications relative to Line’s original work.
+										The novelty of my project lies in performing retrievals using JWST data,
+										combining NIRSpec/PRISM with MIRI/LRS and NIRSpec/G395H—all instruments aboard JWST.
+									</p>
+									<p>
+										The next step is to apply the <em>Brewster</em> framework to the JWST data and directly compare the results with previous studies.
+										In parallel, we also aim to perform spectral fitting using forward models with the same data set,
+										providing a direct comparison between retrieval-based and physics-driven modeling approaches.
+									</p>
+
+									<p>
+										<b>Similar Papers:</b>
+										<li><a href="https://academic.oup.com/mnras/article/470/1/1177/3837820">Retrieval of atmospheric properties of cloudy L dwarfs </a></li>
+										<li><a href="https://iopscience.iop.org/article/10.3847/1538-4357/aa7ff0">Uniform Atmospheric Retrieval Analysis of Ultracool Dwarfs. II. Properties of 11 T dwarfs</a>
+										<li><a href="https://iopscience.iop.org/article/10.3847/1538-4357/abbee2">Retrieval of the d/sdL7+T7.5p Binary SDSS J1416+1348AB</a></li>
+										<li><a href="https://iopscience.iop.org/article/10.3847/1538-4357/ac786c">A Uniform Retrieval Analysis of Ultra-cool Dwarfs. IV. A Statistical Census from 50 Late-T Dwarfs</a>
+
+									</p>
+							</section>
+							<section class="footnotes">
+								<h2>Footnotes</h2>
+								<ol>
+									<li id="note-1">
+										There is a bit of wordplay here. At San Francisco State University, our mascot is the Gators.
+										Why are we alligators when there are no alligators that naturally live in the Bay Area, you may ask?
+										Well, our gator is a very specific kind of gator—a golden gator.
+										Get it?! <a href="'https://en.wikipedia.org/wiki/Golden_Gate_Bridge">Golden Gate-rs</a>!
+										<a href="#ref-1" title="Return to text">&#8617;</a> <!-- Unicode for an up-arrow (↩) -->
+									</li>
+									<li id="note-2">
+										The code is named after the creator’s dog, Brewster.
+										It’s a golden RETRIEVEr!
+										<a href="#ref-2" title="Return to text">&#8617;</a> <!-- Unicode for an up-arrow (↩) -->
+									</li>
+								</ol>
+							</section>
+
+
+					</div>
+			
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://www.linkedin.com/in/efrainalvaradoiii/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="https://orcid.org/0009-0005-8159-8490" class="icon brands alt fa-orcid"><span class="label">Orcid</span></a></li>
+								<li><a href="https://github.com/efrain-alvarado-iii" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="mailto:efrain.alvarado.iii@berkeley.edu" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Efrain Alvarado III</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
